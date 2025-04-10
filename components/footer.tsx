@@ -113,7 +113,7 @@ export default function Footer() {
               <img src="/instagram.png" alt="Instagram" className="w-12 h-10" />
             </Link>
             <Link href="#" className="w-10 h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
-              <img src="/x.png" alt="X" className="w-12 h-10" />
+              <img src="/x.png" alt="X" className="w-12 h-10" /> 
             </Link>
           </div>
         </div>
