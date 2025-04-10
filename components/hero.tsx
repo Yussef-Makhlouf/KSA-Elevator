@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background Image and Overlay */}
       <div className="absolute inset-0  z-10" />
       <Image
-        src="/hero.png"
+        src="/hero1.png"
         alt="مصاعد"
         fill
         className="object-cover object-center"
