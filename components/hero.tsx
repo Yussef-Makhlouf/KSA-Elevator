@@ -6,9 +6,9 @@ import { AlignCenter, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[808px] w-full overflow-hidden">
+    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
       {/* Background Image and Overlay */}
-      <div className="absolute inset-0  z-10" />
+      <div className="absolute inset-0 z-10" />
       <Image
         src="/hero1.png"
         alt="مصاعد"
@@ -19,56 +19,56 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="absolute inset-0 z-20">
-        <div className="container mx-auto h-full px-4 lg:px-[100px]">
-          <div className="flex flex-col items-center gap-8 md:gap-12 pt-[155px] max-w-[966px] mx-auto">
+        <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-[100px]">
+          <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 pt-[100px] sm:pt-[120px] md:pt-[140px] lg:pt-[155px] max-w-[966px] mx-auto">
             {/* Welcome Badge */}
-            <div className="flex items-center gap-5 backdrop-blur-[40px] p-[10px] rounded-[40px] bg-white/20 w-fit">
-              <span className="text-white font-semibold text-lg whitespace-nowrap">
+            <div className="flex items-center gap-3 sm:gap-4 md:gap-5 backdrop-blur-[40px] p-[8px] sm:p-[10px] rounded-[30px] sm:rounded-[40px] bg-white/20 w-fit">
+              <span className="text-white font-semibold text-base sm:text-lg whitespace-nowrap">
                 حيــــاك الله
               </span>
-              <span className="text-lg">👋</span>
+              <span className="text-base sm:text-lg">👋</span>
             </div>
 
             {/* Main Headings */}
-            <div className="flex flex-col gap-5 md:gap-6 w-full text-center">
-              <h1 className="text-white text-3xl md:text-5xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
+            <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full text-center">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
                 شــــريكك الأول فـي تــركيـــــب
               </h1>
-              <h2 className="text-white text-3xl md:text-5xl lg:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
                 وصيانة المصاعد بإحترافيـــة
               </h2>
             </div>
 
             {/* Description */}
-            <p className="text-white text-center text-base md:text-lg font-medium leading-relaxed md:leading-10 max-w-[711px] px-4">
+            <p className="text-white text-center text-sm sm:text-base md:text-lg font-medium leading-relaxed md:leading-10 max-w-[711px] px-4">
               منذ أكثر من 18 عامًا، تقدم مصاعد إعمار المتحدة حلولًا متكاملة في
               بيع وتوريد وتركيب وصيانة المصاعد، مع التزام صارم بمعايير الجودة
               والسلامة العالمية...
             </p>
 
             {/* Bottom Section */}
-            <div className="flex flex-col items-center justify-center gap-8 w-full">
+            <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-full">
               {/* Profile Button */}
-              <a href="/catalog.pdf" download className="bg-white/20 backdrop-blur-[40px] rounded-[80px] h-[60px] w-[186px] text-white font-extrabold text-xs hover:bg-white/30 transition-colors flex items-center justify-center gap-2">
+              <a href="/catalog.pdf" download className="bg-white/20 backdrop-blur-[40px] rounded-[60px] sm:rounded-[80px] h-[50px] sm:h-[60px] w-[160px] sm:w-[186px] text-white font-extrabold text-xs hover:bg-white/30 transition-colors flex items-center justify-center gap-2">
                 بروفــايل الشركــة
                 <span className="transform rotate-180">
                   <img
                     src="/download.png"
                     alt="arrow-right"
-                    className="w-4 h-4"
+                    className="w-3 h-3 sm:w-4 sm:h-4"
                   />
                 </span>
               </a>
 
               {/* Stats and Info */}
-              <div className="flex flex-col items-center gap-8">
+              <div className="flex flex-col items-center gap-6 sm:gap-8">
                 {/* Avatar Stack */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div className="flex items-center gap-2 px-2">
                     <span className="text-white font-medium">5.0</span>
                     <svg
-                      width="13"
-                      height="12"
+                      width="12"
+                      height="11"
                       viewBox="0 0 13 12"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,16 +79,16 @@ export default function Hero() {
                       />
                     </svg>
                   </div>
-                  <div className="flex -space-x-6 rtl:space-x-reverse">
+                  <div className="flex -space-x-4 sm:-space-x-6 rtl:space-x-reverse">
                     <div
-                      className="w-[50px] h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center transform hover:scale-110 transition-transform"
+                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center transform hover:scale-110 transition-transform"
                       style={{
                         zIndex: 0,
-                        marginLeft: "-15px",
+                        marginLeft: "-12px",
                         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <span className="text-[#05509F] font-semibold text-sm">
+                      <span className="text-[#05509F] font-semibold text-xs sm:text-sm">
                         +1k
                       </span>
                     </div>
@@ -96,10 +96,10 @@ export default function Hero() {
                       (avatar, i) => (
                         <div
                           key={i}
-                          className="w-[50px] h-[50px] rounded-full border-3 border-white overflow-hidden transform transition-transform hover:scale-110"
+                          className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full border-3 border-white overflow-hidden transform transition-transform hover:scale-110"
                           style={{
                             zIndex: 40 - i * 10,
-                            marginLeft: i > 0 ? "-15px" : "0",
+                            marginLeft: i > 0 ? "-12px" : "0",
                             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                           }}
                         >
@@ -117,38 +117,11 @@ export default function Hero() {
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-col items-center gap-6 text-white ">
-                  <div className="flex items-center gap-4 flex-wrap justify-center">
-                    <span className="text-base font-medium">استدامة</span>
+                <div className="flex flex-col items-center gap-4 sm:gap-6 text-white">
+                  <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
+                    <span className="text-sm sm:text-base font-medium">استدامة</span>
                     <svg
-                      width="25"
-                      height="2"
-                      viewBox="0 0 25 2"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24.5 1H0.5"
-                        stroke="url(#paint0_linear_28_493)"
-                        strokeWidth="2"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="paint0_linear_28_493"
-                          x1="24.5"
-                          y1="1.5"
-                          x2="0.5"
-                          y2="1.5"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop stop-color="white" stop-opacity="0" />
-                          <stop offset="1" stop-color="white" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <span className="text-base font-medium">جودة</span>
-                    <svg
-                      width="25"
+                      width="20"
                       height="2"
                       viewBox="0 0 25 2"
                       fill="none"
@@ -173,12 +146,39 @@ export default function Hero() {
                         </linearGradient>
                       </defs>
                     </svg>
-                    <span className="text-base font-medium">نزاهه</span>
-                    <svg width="5" height="4" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="2.5" cy="2" r="2" fill="white"/>
-</svg>
+                    <span className="text-sm sm:text-base font-medium">جودة</span>
+                    <svg
+                      width="20"
+                      height="2"
+                      viewBox="0 0 25 2"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24.5 1H0.5"
+                        stroke="url(#paint0_linear_28_493)"
+                        strokeWidth="2"
+                      />
+                      <defs>
+                        <linearGradient
+                          id="paint0_linear_28_493"
+                          x1="24.5"
+                          y1="1.5"
+                          x2="0.5"
+                          y2="1.5"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop stopColor="white" stopOpacity="0" />
+                          <stop offset="1" stopColor="white" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                    <span className="text-sm sm:text-base font-medium">نزاهه</span>
+                    <svg width="4" height="3" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="2.5" cy="2" r="2" fill="white"/>
+                    </svg>
 
-                    <span className="text-base font-medium whitespace-nowrap">
+                    <span className="text-sm sm:text-base font-medium whitespace-nowrap">
                       أنت شريك الحلول لنظام المصاعد.
                     </span>
                   </div>
@@ -189,8 +189,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Social Media Icons */}
-      <div className="absolute bottom-[50px] left-4 md:left-[100px] flex gap-[5px] z-20">
+      {/* Social Media Icons - Centered */}
+      <div className="absolute bottom-[30px] sm:bottom-[50px] left-0 right-0 flex justify-center gap-[5px] z-20">
         {[
           {
             icon: "M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.87 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.05.78.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 17.65a6.34 6.34 0 0 0 6.33 6.33 6.34 6.34 0 0 0 6.32-6.33V8.05c1.18.69 2.47 1.07 3.85 1.07v-3.4a4.85 4.85 0 0 1-1.91.97Z",
@@ -214,11 +214,11 @@ export default function Hero() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-[50px] h-[50px] rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center group"
+            className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center group"
           >
             <svg
-              width="17"
-              height="17"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
