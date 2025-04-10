@@ -10,7 +10,7 @@ export default function Header() {
   const [isMachinesOpen, setIsMachinesOpen] = useState(false)
   const [isDoorsOpen, setIsDoorsOpen] = useState(false)
 
-  // Close all dropdowns when menu is closed
+
   const handleMenuClose = () => {
     setIsMenuOpen(false)
     setIsMachinesOpen(false)

@@ -45,18 +45,18 @@ export default function ElevatorPage() {
 
     ],
     request: [
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor1.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor2.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor3.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor4.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor5.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor6.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor7.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor8.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor9.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor10.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor11.png" },
-      { title: "لوحات الطلب الداخلية والخارجية ", image: "/floor12.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out1.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out2.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out3.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out4.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out5.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out6.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out7.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out8.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out9.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out10.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out11.png" },
+      { title: "لوحات الطلب الداخلية والخارجية ", image: "/out12.png" },
 
       
     ]
