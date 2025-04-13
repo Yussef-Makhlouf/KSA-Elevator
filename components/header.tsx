@@ -228,6 +228,7 @@ export default function Header() {
                       بروفايل الشركة
                     </a>
                     {/* Mobile Contact Button */}
+                          <Link href="/contact">
                     <Button className="bg-[#E31E24] hover:bg-[#E31E24]/90 rounded-[20px] sm:rounded-[24px] h-[32px] sm:h-[36px] md:h-[38px] px-3 sm:px-4 md:px-6 flex items-center gap-1.5 sm:gap-2 justify-center mt-3 sm:mt-4">
                       <svg width="16" height="14" className="sm:w-[18px] sm:h-[16px]" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.84698 14.4008H14.047C14.8108 14.4008 15.5434 14.0973 16.0834 13.5573C16.6235 13.0171 16.927 12.2847 16.927 11.5208V4.32081C16.927 3.55699 16.6235 2.82441 16.0834 2.2843C15.5434 1.7442 14.8108 1.44081 14.047 1.44081H5.40698C4.64315 1.44081 3.91061 1.7442 3.37051 2.2843C2.8304 2.82441 2.52698 3.55699 2.52698 4.32081V7.9208" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -237,6 +238,7 @@ export default function Header() {
                       </svg>
                       <span className="font-semibold text-[11px] sm:text-[12px] md:text-[13px]">تواصل معنا</span>
                     </Button>
+                            </Link>
                   </nav>
                 </div>
               </div>

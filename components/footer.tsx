@@ -113,7 +113,10 @@ export default function Footer() {
               <img src="/instagram.png" alt="Instagram" className="w-12 h-10" />
             </Link>
             <Link href="#" className="w-10 h-10 rounded-full bg-[#05509F] flex items-center justify-center hover:bg-[#05509F]/90 transition-colors">
-              <img src="/x.png" alt="X" className="w-12 h-10" /> 
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3946 -0.00976562H14.7373L9.61917 5.83988L15.6402 13.7999H10.9258L7.23328 8.97221L3.00822 13.7999H0.664116L6.13842 7.54308L0.362427 -0.00976562H5.19653L8.53423 4.40297L12.3946 -0.00976562ZM11.5724 12.3977H12.8705L4.49117 1.3188H3.09816L11.5724 12.3977Z" fill="white"/>
+</svg>
+
             </Link>
           </div>
         </div>
