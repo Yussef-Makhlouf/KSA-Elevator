@@ -20,13 +20,31 @@ type TabContent = {
   [key: string]: TabItem[];
 };
 
+// Add Skeleton component
+const SkeletonCard = () => (
+  <div className="sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col">
+    <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-200 animate-pulse mb-4 sm:mb-6 lg:mb-8" />
+    <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
+      <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">
+        <div className="h-6 w-32 bg-gray-200 rounded animate-pulse" />
+        <div className="w-4 h-4 bg-gray-200 rounded animate-pulse" />
+      </div>
+    </div>
+  </div>
+);
+
 export default function DoorsPage() {
   const [activeTab, setActiveTab] = useState("doors");
   const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
 
   useEffect(() => {
     setIsLoading(false);
   }, []);
+
+  const handleImageLoad = (imageKey: string) => {
+    setLoadedImages(prev => ({ ...prev, [imageKey]: true }));
+  };
 
   const tabs = [
     { id: "doors", label: "أبـــواب" },
@@ -165,16 +183,22 @@ export default function DoorsPage() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className=" sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
+                className="sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
               >
                 <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#FAFAFA] mb-4 sm:mb-6 lg:mb-8">
-                  <div className="relative w-full h-full   ">
+                  <div className="relative w-full h-full">
+                    {!loadedImages[`${item.image}-${index}`] && (
+                      <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                    )}
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-contain p-2 sm:p-3 lg:p-4 "
+                      className={`object-contain p-2 sm:p-3 lg:p-4 transition-opacity duration-300 ${
+                        loadedImages[`${item.image}-${index}`] ? 'opacity-100' : 'opacity-0'
+                      }`}
                       loading="lazy"
+                      onLoadingComplete={() => handleImageLoad(`${item.image}-${index}`)}
                       sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
                     />
                   </div>

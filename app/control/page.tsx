@@ -20,13 +20,40 @@ type TabContent = {
   [key: string]: TabItem[];
 };
 
+// Add Skeleton component
+const SkeletonCard = () => (
+  <div className="sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col">
+    <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-gray-200 animate-pulse mb-4 sm:mb-6 lg:mb-8" />
+    <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
+      <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">
+        <div className="h-4 w-32 bg-gray-200 rounded animate-pulse" />
+        <svg 
+          width="8" 
+          height="8" 
+          viewBox="0 0 12 12" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="rotate-[-90deg] flex-shrink-0 sm:w-3 sm:h-3 lg:w-4 lg:h-4"
+        >
+          <path d="M6 0L11.1962 9L0.803847 9L6 0Z" fill="#EC2127"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+);
+
 export default function ElevatorPage() {
   const [activeTab, setActiveTab] = useState("control");
   const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
 
   useEffect(() => {
     setIsLoading(false);
   }, []);
+
+  const handleImageLoad = (imageKey: string) => {
+    setLoadedImages(prev => ({ ...prev, [imageKey]: true }));
+  };
 
   const tabs = [
     { id: "control", label: " لوحة التحكم" },
@@ -160,43 +187,61 @@ export default function ElevatorPage() {
             animate="visible"
             className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-16 w-full px-2 sm:px-4 max-w-[1600px] mx-auto"
           >
-            {tabContent[activeTab].map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className=" sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
-              >
-                <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#FAFAFA] mb-4 sm:mb-6 lg:mb-8">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-2 sm:p-3 lg:p-4"
-                      loading="lazy"
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
-                    />
+            {isLoading ? (
+              // Show skeleton loading
+              Array.from({ length: 8 }).map((_, index) => (
+                <motion.div
+                  key={`skeleton-${index}`}
+                  variants={itemVariants}
+                >
+                  <SkeletonCard />
+                </motion.div>
+              ))
+            ) : (
+              tabContent[activeTab].map((item, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
+                >
+                  <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#FAFAFA] mb-4 sm:mb-6 lg:mb-8">
+                    <div className="relative w-full h-full">
+                      {!loadedImages[`${activeTab}-${index}`] && (
+                        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                      )}
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className={`object-contain p-2 sm:p-3 lg:p-4 transition-opacity duration-300 ${
+                          loadedImages[`${activeTab}-${index}`] ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        loading="lazy"
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
+                        onLoadingComplete={() => handleImageLoad(`${activeTab}-${index}`)}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
-                  <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">
-                    <h3 className="text-primary text-sm sm:text-base lg:text-lg font-bold leading-tight sm:leading-relaxed text-right line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <svg 
-                      width="8" 
-                      height="8" 
-                      viewBox="0 0 12 12" 
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="rotate-[-90deg] flex-shrink-0 sm:w-3 sm:h-3 lg:w-4 lg:h-4"
-                    >
-                      <path d="M6 0L11.1962 9L0.803847 9L6 0Z" fill="#EC2127"/>
-                    </svg>
+                  <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
+                    <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">
+                      <h3 className="text-primary text-sm sm:text-base lg:text-lg font-bold leading-tight sm:leading-relaxed text-right line-clamp-2">
+                        {item.title}
+                      </h3>
+                      <svg 
+                        width="8" 
+                        height="8" 
+                        viewBox="0 0 12 12" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="rotate-[-90deg] flex-shrink-0 sm:w-3 sm:h-3 lg:w-4 lg:h-4"
+                      >
+                        <path d="M6 0L11.1962 9L0.803847 9L6 0Z" fill="#EC2127"/>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))
+            )}
           </motion.div>
         </div>
       </section>

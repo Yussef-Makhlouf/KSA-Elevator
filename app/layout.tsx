@@ -43,7 +43,7 @@ export default function RootLayout({
         <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/966590113144"
+            href="https://wa.me/966564630179"
             target="_blank"
             rel="noopener noreferrer" 
           
@@ -59,7 +59,7 @@ export default function RootLayout({
 
           {/* Phone Button */}
           <a
-            href="tel:+966590113144"
+            href="tel:0564630179"
         
             aria-label="Call us"
           >

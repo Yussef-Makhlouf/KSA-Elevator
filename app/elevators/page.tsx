@@ -20,6 +20,29 @@ type TabContent = {
   [key: string]: TabItem[];
 };
 
+const ImageWithSkeleton = ({ src, alt }: { src: string; alt: string }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="relative w-full aspect-square">
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-[16px] sm:rounded-[24px] lg:rounded-[32px]" />
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={`object-contain p-2 sm:p-3 lg:p-4 transition-opacity duration-300 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        loading="lazy"
+        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
+        onLoadingComplete={() => setIsLoading(false)}
+      />
+    </div>
+  );
+};
+
 export default function ElevatorPage() {
   const [activeTab, setActiveTab] = useState("elevators");
   const [isLoading, setIsLoading] = useState(true);
@@ -173,19 +196,10 @@ export default function ElevatorPage() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className=" sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
+                className="sm:rounded-[32px] lg:rounded-[40px] p-3 sm:p-4 lg:p-6 w-full flex flex-col transition-all hover:border-2 hover:border-primary"
               >
                 <div className="w-full aspect-square rounded-[16px] sm:rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#FAFAFA] mb-4 sm:mb-6 lg:mb-8">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-2 sm:p-3 lg:p-4"
-                      loading="lazy"
-                      sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
-                    />
-                  </div>
+                  <ImageWithSkeleton src={item.image} alt={item.title} />
                 </div>
                 <div className="w-full pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
                   <div className="flex flex-row-reverse items-center gap-2 sm:gap-3 justify-end">

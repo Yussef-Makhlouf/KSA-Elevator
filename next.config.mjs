@@ -27,7 +27,7 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  output: 'standalone',
+  output: 'export',
 }
 
 if (userConfig) {

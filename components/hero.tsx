@@ -7,49 +7,52 @@ import { AlignCenter, ChevronDown } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
-      {/* Background Image and Overlay */}
-      <div className="absolute inset-0 z-10" />
-      <Image
-        src="/hero1.png"
-        alt="مصاعد"
-        fill
-        className="object-cover object-center"
-        priority
-      />
+      {/* Background Video and Overlay */}
+      <div className="absolute inset-0 z-10 bg-black/30" />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Main Content */}
       <div className="absolute inset-0 z-20">
         <div className="container mx-auto h-full px-4 sm:px-6 md:px-8 lg:px-[100px]">
-          <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 pt-[100px] sm:pt-[120px] md:pt-[140px] lg:pt-[155px] max-w-[966px] mx-auto">
+          <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-[80px] sm:pt-[100px] md:pt-[120px] lg:pt-[140px] max-w-[966px] mx-auto">
             {/* Welcome Badge */}
-            <div className="flex items-center gap-3 sm:gap-4 md:gap-5 backdrop-blur-[40px] p-[8px] sm:p-[10px] rounded-[30px] sm:rounded-[40px] bg-white/20 w-fit">
-              <span className="text-white font-semibold text-base sm:text-lg whitespace-nowrap">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 backdrop-blur-[40px] p-[6px] sm:p-[8px] md:p-[10px] rounded-[25px] sm:rounded-[30px] md:rounded-[40px] bg-white/20 w-fit">
+              <span className="text-white font-semibold text-sm sm:text-base md:text-lg whitespace-nowrap">
                 حيــــاك الله
               </span>
-              <span className="text-base sm:text-lg">👋</span>
+              <span className="text-sm sm:text-base md:text-lg">👋</span>
             </div>
 
             {/* Main Headings */}
-            <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 lg:gap-6 w-full text-center">
-              <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
+            <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-5 w-full text-center">
+              <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[66px] font-extrabold leading-tight md:leading-[67px] whitespace-pre-line">
                 شــــريكك الأول فـي تــركيـــــب
               </h1>
-              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
+              <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[56px] font-extrabold leading-tight md:leading-[67px] max-w-[803px] mx-auto text-center">
                 وصيانة المصاعد بإحترافيـــة
               </h2>
             </div>
 
             {/* Description */}
-            <p className="text-white text-center text-sm sm:text-base md:text-lg font-medium leading-relaxed md:leading-10 max-w-[711px] px-4">
+            <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed md:leading-10 max-w-[711px] px-4">
               منذ أكثر من 18 عامًا، تقدم مصاعد إعمار المتحدة حلولًا متكاملة في
               بيع وتوريد وتركيب وصيانة المصاعد، مع التزام صارم بمعايير الجودة
               والسلامة العالمية...
             </p>
 
             {/* Bottom Section */}
-            <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-full">
+            <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full mt-4 sm:mt-6 md:mt-8">
               {/* Profile Button */}
-              <a href="/catalog.pdf" download className="bg-white/20 backdrop-blur-[40px] rounded-[60px] sm:rounded-[80px] h-[50px] sm:h-[60px] w-[160px] sm:w-[186px] text-white font-extrabold text-xs hover:bg-white/30 transition-colors flex items-center justify-center gap-2">
+              <a href="/catalog1.pdf" download className="bg-white/20 backdrop-blur-[40px] rounded-[50px] sm:rounded-[60px] md:rounded-[80px] h-[45px] sm:h-[50px] md:h-[60px] w-[140px] sm:w-[160px] md:w-[186px] text-white font-extrabold text-xs hover:bg-white/30 transition-colors flex items-center justify-center gap-2">
                 بروفــايل الشركــة
                 <span className="transform rotate-180">
                   <img
@@ -61,11 +64,11 @@ export default function Hero() {
               </a>
 
               {/* Stats and Info */}
-              <div className="flex flex-col items-center gap-6 sm:gap-8">
+              <div className="flex flex-col items-center gap-4 sm:gap-6 md:gap-8">
                 {/* Avatar Stack */}
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="flex items-center gap-2 px-2">
-                    <span className="text-white font-medium">5.0</span>
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+                  <div className="flex items-center gap-1 sm:gap-2 px-2">
+                    <span className="text-white font-medium text-sm">5.0</span>
                     <svg
                       width="12"
                       height="11"
@@ -79,12 +82,12 @@ export default function Hero() {
                       />
                     </svg>
                   </div>
-                  <div className="flex -space-x-4 sm:-space-x-6 rtl:space-x-reverse">
+                  <div className="flex -space-x-3 sm:-space-x-4 md:-space-x-6 rtl:space-x-reverse">
                     <div
-                      className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center transform hover:scale-110 transition-transform"
+                      className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] rounded-full bg-[#EDEDED] flex items-center justify-center transform hover:scale-110 transition-transform"
                       style={{
                         zIndex: 0,
-                        marginLeft: "-12px",
+                        marginLeft: "-10px",
                         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                       }}
                     >
@@ -96,10 +99,10 @@ export default function Hero() {
                       (avatar, i) => (
                         <div
                           key={i}
-                          className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full border-3 border-white overflow-hidden transform transition-transform hover:scale-110"
+                          className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px] rounded-full border-3 border-white overflow-hidden transform transition-transform hover:scale-110"
                           style={{
                             zIndex: 40 - i * 10,
-                            marginLeft: i > 0 ? "-12px" : "0",
+                            marginLeft: i > 0 ? "-10px" : "0",
                             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                           }}
                         >
@@ -117,11 +120,11 @@ export default function Hero() {
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-col items-center gap-4 sm:gap-6 text-white">
-                  <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
-                    <span className="text-sm sm:text-base font-medium">استدامة</span>
+                <div className="flex flex-col items-center gap-3 sm:gap-4 md:gap-6 text-white">
+                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-wrap justify-center">
+                    <span className="text-xs sm:text-sm md:text-base font-medium">استدامة</span>
                     <svg
-                      width="20"
+                      width="15"
                       height="2"
                       viewBox="0 0 25 2"
                       fill="none"
@@ -146,9 +149,9 @@ export default function Hero() {
                         </linearGradient>
                       </defs>
                     </svg>
-                    <span className="text-sm sm:text-base font-medium">جودة</span>
+                    <span className="text-xs sm:text-sm md:text-base font-medium">جودة</span>
                     <svg
-                      width="20"
+                      width="15"
                       height="2"
                       viewBox="0 0 25 2"
                       fill="none"
@@ -173,12 +176,12 @@ export default function Hero() {
                         </linearGradient>
                       </defs>
                     </svg>
-                    <span className="text-sm sm:text-base font-medium">نزاهه</span>
-                    <svg width="4" height="3" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span className="text-xs sm:text-sm md:text-base font-medium">نزاهه</span>
+                    <svg width="3" height="2" viewBox="0 0 5 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="2.5" cy="2" r="2" fill="white"/>
                     </svg>
 
-                    <span className="text-sm sm:text-base font-medium whitespace-nowrap">
+                    <span className="text-xs sm:text-sm md:text-base font-medium whitespace-nowrap">
                       أنت شريك الحلول لنظام المصاعد.
                     </span>
                   </div>
@@ -189,8 +192,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Social Media Icons - Centered */}
-      <div className="absolute bottom-[30px] sm:bottom-[50px] left-0 right-0 flex justify-center gap-[5px] z-20">
+      {/* Social Media Icons - Responsive Positioning */}
+      <div className="absolute bottom-[20px] sm:bottom-[30px] md:bottom-[40px] left-0 right-0 md:right-auto md:left-[40px] lg:left-[60px] xl:left-[100px] flex justify-center md:justify-start gap-[5px] z-20">
         {[
           {
             icon: "M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.87 2.89 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.05.78.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 17.65a6.34 6.34 0 0 0 6.33 6.33 6.34 6.34 0 0 0 6.32-6.33V8.05c1.18.69 2.47 1.07 3.85 1.07v-3.4a4.85 4.85 0 0 1-1.91.97Z",
@@ -214,11 +217,11 @@ export default function Hero() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center group"
+            className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center group"
           >
             <svg
-              width="15"
-              height="15"
+              width="12"
+              height="12"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

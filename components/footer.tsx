@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Logo and Description Section */}
           <div className="lg:col-span-5 order-1">
-            <img src="/logo.png" alt="Emaar United Elevators Logo" className="w-[92px] h-[92px] object-contain mb-6" />
+            <img src="/logo1.svg" alt="Emaar United Elevators Logo" className="w-[92px] h-[92px] object-contain mb-6" />
             <p className="text-[#656565] text-base leading-[32px] text-right mb-8 max-w-[467px]" dir="rtl">
               منذ أكثر من 18 عاماً، تقدم مصاعد إعمار المتحدة حلولاً متكاملة في بيع وتوريد وتركيب وصيانة المصاعد، مع التزام صارم بمعايير الجودة والسلامة العالمية...
             </p>
-            <a href="/catalog.pdf" download className="bg-[#E41937] text-white  px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#E41937]/90 transition-colors">
+            <a href="/catalog1.pdf" download className="bg-[#E41937] text-white  px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#E41937]/90 transition-colors">
               <img src="/vector.png" alt="arrow" className="w-3 h-3" />
               بروفايل الشركة
             </a>
@@ -42,7 +42,7 @@ export default function Footer() {
               <div className="flex flex-col items-start gap-5">
                 <Link href="/contact" className="text-[#656565] hover:text-[#05509F] transition-colors text-base">اتصل بنا</Link>
                 <Link href="/about" className="text-[#656565] hover:text-[#05509F] transition-colors text-base">من نحن ؟</Link>
-                <a href="/catalog.pdf" download className="text-[#656565] hover:text-[#05509F] transition-colors text-base">بروفايل الشركة</a>
+                <a href="/catalog1.pdf" download className="text-[#656565] hover:text-[#05509F] transition-colors text-base">بروفايل الشركة</a>
               </div>
             </div>
           </div>

@@ -77,7 +77,7 @@ export default function Header() {
             {/* Logo and Company Name */}
         <Link href="/">
         <div className="flex items-center gap-1.5 sm:gap-2 max-w-[180px] sm:max-w-[200px] md:max-w-none">
-              <Image src="/logo.png" alt="Logo" width={48} height={48} className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto" />
+              <Image src="/logo1.svg" alt="Logo" width={48} height={48} className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto" />
               <span className="font-bold text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg truncate">شركة إعمار المتحدة للمصاعد</span>
             </div></Link>
 
