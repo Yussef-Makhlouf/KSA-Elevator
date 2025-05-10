@@ -28,6 +28,7 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output: 'export',
+  trailingSlash: true,
 }
 
 if (userConfig) {
